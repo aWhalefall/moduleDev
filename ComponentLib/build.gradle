@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.greenrobot.greendao'
+
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [eventBusIndex: 'com.ftoutiao.component.MyEventBusIndex',
+                             moduleName   : project.getName()]
+            }
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/*'
+    }
+
+}
+
+
+
+greendao {
+    schemaVersion 2
+    daoPackage 'com.component.model.db'
+    targetGenDir 'src/main/java'
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api deps.ftoutiaoDependencies.easyPermissions
+    api deps.ftoutiaoDependencies.design
+//    api deps.ftoutiaoDependencies.supportv7
+    api 'com.android.support:appcompat-v7:26.1.0'
+    api deps.ftoutiaoDependencies.joda
+    api deps.ftoutiaoDependencies.easyPermissions
+    api deps.ftoutiaoDependencies.eventbus
+    annotationProcessor deps.ftoutiaoDependencies.eventbusannotation
+    api deps.ftoutiaoDependencies.greendao
+    // Architecture components
+    api deps.lifecycle.runtime
+    api deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    api project(':CoreLib')
+    annotationProcessor rootProject.ext.opt["arouter-compiler"]
+}

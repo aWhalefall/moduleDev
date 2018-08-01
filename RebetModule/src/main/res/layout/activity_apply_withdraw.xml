@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f8f8f8"
+    tools:context=".pay.AddWithDrawAccountActivity">
+
+    <include
+        layout="@layout/actionbar_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/rl_user_area"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ImageView
+            android:id="@+id/iv_user_portrait"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_alipay" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/iv_user_portrait"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/please_add_alipay_account"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_17" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:id="@+id/tv_user_telephoe"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textColor="@color/text_666666"
+                    android:textSize="@dimen/sp_12"
+                    tools:ignore="Suspicious0dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_user_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:clickable="true"
+                android:src="@drawable/icon_arrow_r" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/rl_user_area">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="提取金额"
+            android:textColor="@color/text_444" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/main_color_white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="2dp">
+
+                <TextView
+                    android:id="@+id/recharge_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center"
+                    android:text="￥"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/text_22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/recharge_amount_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="最少50元"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/color_00B0FF"
+                    android:textColorHint="#b6b6b6"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/recharge_img_amountcancel"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:padding="9dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                style="@style/horizontal_line"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@color/text_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="可用余额："
+                android:textColor="@color/txt_color_999999"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/recharge_tv_leftamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="2"
+                android:gravity="center|left"
+                android:text="0元"
+                android:textColor="@color/txt_color_999999"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="15dp"
+                android:text="全部提现"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="15dp"
+            android:text="@string/expected_to_arrive_in_one_minute" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_outrecharge"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/com_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/bg_btn_selector"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/outrecharge"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+</android.support.constraint.ConstraintLayout>

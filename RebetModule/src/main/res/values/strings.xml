@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">rebetmobule</string>
+    <string name="fintace_rebate">理财返现</string>
+    <string name="please_add_alipay_account">请添加支付宝账户</string>
+    <string name="outrecharge">确认提现</string>
+    <string name="expected_to_arrive_in_one_minute">预计一分钟到账,以支付宝实际到账为准</string>
+    <string name="alipay_account">支付宝账号:</string>
+    <string name="alipay_password">支付宝实名:</string>
+    <string name="input_hint_account">账号为必填项</string>
+    <string name="confirm">确认</string>
+    <string name="input_hint_password">实名可不填</string>
+</resources>
